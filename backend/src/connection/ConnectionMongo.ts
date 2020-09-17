@@ -13,6 +13,7 @@ export default (db: string) => {
       });
   };
   connect();
+  mongoose.set('useCreateIndex', true);
 
   mongoose.connection.on('desconectar', connect);
 };

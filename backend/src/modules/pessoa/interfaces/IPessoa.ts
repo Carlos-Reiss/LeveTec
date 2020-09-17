@@ -3,4 +3,4 @@ export interface IPessoa {
   nome: string;
   telefone: string;
   cpf: string;
-};
+}
