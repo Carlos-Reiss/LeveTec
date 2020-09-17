@@ -8,7 +8,6 @@ class CreatePessoaService {
       throw new Error('CPF não é valido');
     }
     const verificaExistenciaCPFemBase = await Pessoa.findOne({ cpf });
-
     if (verificaExistenciaCPFemBase) {
       throw new Error('CPF já existente na base de dados');
     }
