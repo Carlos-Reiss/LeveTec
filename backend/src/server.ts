@@ -1,7 +1,10 @@
 // author: carlos antonio reis
 
-import express from 'express';
+import express, { Request, Response, NextFunction } from 'express';
 import router from './router';
+import { errors } from 'celebrate';
+import cors from 'cors';
+import appError from './error/AppError';
 
 import connectionDatabase from './connection/ConnectionMongo';
 
@@ -12,8 +15,19 @@ const URL =
 
 connectionDatabase(URL);
 
+server.use(cors());
 server.use(express.json());
+
 server.use(router);
+server.use(errors());
+
+server.use(( err: Error, request: Request, response: Response, _: NextFunction ) => {
+  if(err instanceof appError){
+    return response.status(err.statusCode).json({ status: 'Error', message: err.message});
+  }
+  return response.status(500).json({ status: 'Internal Server Error', message: err.message});
+});
+
 
 server.listen(3333, () => {
   console.log('Servidor rodando na porta: 3333');
