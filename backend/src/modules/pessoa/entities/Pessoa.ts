@@ -8,4 +8,4 @@ const PessoaSchema = new Schema<IPessoa>({
   cpf: { type: String, required: true, unique: true },
 });
 
-export default model('Pessoa', PessoaSchema);
+export default model<IPessoa>('Pessoa', PessoaSchema);

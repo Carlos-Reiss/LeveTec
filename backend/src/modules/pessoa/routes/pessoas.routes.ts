@@ -1,8 +1,10 @@
-import { Router, Request, Response } from 'express';
+import { Router } from 'express';
 import { celebrate, Segments, Joi } from 'celebrate';
-import CreatePessoaService from '../service/CreatePessoaService';
+import PessoaController from '../controllers/PessoaController';
 
 const pessoasRouter = Router();
+
+const pessoaController = new PessoaController();
 
 pessoasRouter.post(
   '/',
@@ -13,15 +15,27 @@ pessoasRouter.post(
       cpf: Joi.string().required(),
     }),
   }),
-  async (request: Request, response: Response) => {
-    const { nome, telefone, cpf } = request.body;
+  pessoaController.create,
+);
 
-    const createPessoa = new CreatePessoaService();
+pessoasRouter.get(
+  '/:cpf',
+  celebrate({
+    [Segments.PARAMS]: Joi.object().keys({
+      cpf: Joi.string().required(),
+     }),
+  }),
+  pessoaController.index
+);
 
-    const pessoa = await createPessoa.execute({ nome, cpf, telefone });
-
-    return response.json(pessoa);
-  },
+pessoasRouter.delete(
+  '/:cpf',
+  celebrate({
+    [Segments.PARAMS]: Joi.object().keys({
+      cpf: Joi.string().required(),
+     }),
+  }),
+  pessoaController.delete
 );
 
 export default pessoasRouter;

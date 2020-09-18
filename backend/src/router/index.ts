@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import cursorRouter from '../modules/curso/routes/cursor.routes';
+import cursorRouter from '../modules/curso/routes/cursos.routes';
 import pessoasRouter from '../modules/pessoa/routes/pessoas.routes';
 
 const router = Router();

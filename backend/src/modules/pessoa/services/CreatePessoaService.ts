@@ -1,15 +1,20 @@
-import { Document } from 'mongoose';
 import Pessoa from '../entities/Pessoa';
 import { IPessoa } from '../interfaces/IPessoa';
 import ValidateCpf from '../../../util/validaCPF';
 import AppError from '../../../error/AppError';
+
+type IRequest = {
+  cpf: string,
+  nome: string,
+  telefone: string,
+}
 
 class CreatePessoaService {
   public async execute({
     cpf,
     nome,
     telefone,
-  }: Omit<IPessoa, 'id'>): Promise<Document> {
+  }: IRequest): Promise<IPessoa> {
     if (ValidateCpf(cpf) === false) {
       throw new AppError('CPF não é valido', 400);
     }
