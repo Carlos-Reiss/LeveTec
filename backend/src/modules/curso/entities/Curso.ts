@@ -1,8 +1,8 @@
 import { model, Schema } from 'mongoose';
+import { ICurso } from '../interfaces/ICurso';
 
-const CursoSchema = new Schema({
-  numeroMatricula: [{ type: Schema.Types.ObjectId, ref: 'Pessoa' }],
+const CursoSchema = new Schema<ICurso>({
   nome: { type: String, required: true },
 });
 
-export default model('Curso', CursoSchema);
+export default model<ICurso>('Curso', CursoSchema);

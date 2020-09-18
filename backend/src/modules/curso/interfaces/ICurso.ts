@@ -1,6 +1,5 @@
-import { IPessoa } from '../../pessoa/interfaces/IPessoa';
+import { Document } from 'mongoose';
 
-export interface ICurso {
-  numeroMatricula: IPessoa[];
+export interface ICurso extends Document {
   nome: string;
 }

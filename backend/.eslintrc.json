@@ -25,7 +25,7 @@
   "rules": {
     "prettier/prettier": "error",
     "@typescript-eslint/no-unused-vars":["error",{
-      "argsIgnorePattern":"_",
+      "argsIgnorePattern":"_"
     }],
     "class-methods-use-this": "off",
     "import/extensions": [
