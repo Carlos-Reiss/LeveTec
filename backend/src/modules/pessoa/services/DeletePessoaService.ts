@@ -1,17 +1,13 @@
 import Pessoa from '../entities/Pessoa';
-import { IPessoa } from '../interfaces/IPessoa';
 import ValidateCpf from '../../../util/validaCPF';
 import AppError from '../../../error/AppError';
 
 type IRequest = {
-  cpf: string,
-}
+  cpf: string;
+};
 
 class DeletePessoaService {
-  public async execute({
-    cpf,
-  }: IRequest): Promise<void> {
-
+  public async execute({ cpf }: IRequest): Promise<void> {
     if (ValidateCpf(cpf) === false) {
       throw new AppError('CPF não é valido', 400);
     }
@@ -19,12 +15,13 @@ class DeletePessoaService {
     const searchPessoa = await Pessoa.findOne({ cpf });
 
     if (!searchPessoa) {
-      throw new AppError('Buscamos na base de dados mas não encontramos nada...', 404);
+      throw new AppError(
+        'Buscamos na base de dados mas não encontramos nada...',
+        404,
+      );
     }
 
-    await Pessoa.deleteOne({ $where: searchPessoa._id })
-
-    return ;
+    await Pessoa.deleteOne(searchPessoa);
   }
 }
 

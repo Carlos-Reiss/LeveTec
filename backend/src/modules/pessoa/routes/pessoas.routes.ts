@@ -23,9 +23,9 @@ pessoasRouter.get(
   celebrate({
     [Segments.PARAMS]: Joi.object().keys({
       cpf: Joi.string().required(),
-     }),
+    }),
   }),
-  pessoaController.index
+  pessoaController.index,
 );
 
 pessoasRouter.delete(
@@ -33,9 +33,23 @@ pessoasRouter.delete(
   celebrate({
     [Segments.PARAMS]: Joi.object().keys({
       cpf: Joi.string().required(),
-     }),
+    }),
   }),
-  pessoaController.delete
+  pessoaController.delete,
+);
+
+pessoasRouter.put(
+  '/:cpf',
+  celebrate({
+    [Segments.PARAMS]: Joi.object().keys({
+      cpf: Joi.string().required(),
+    }),
+    [Segments.BODY]: {
+      nome: Joi.string().required(),
+      telefone: Joi.string().required().max(11).min(9),
+    },
+  }),
+  pessoaController.update,
 );
 
 export default pessoasRouter;

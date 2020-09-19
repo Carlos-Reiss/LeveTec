@@ -2,12 +2,10 @@ import { Request, Response } from 'express';
 import CreatePessoaService from '../services/CreatePessoaService';
 import SearchPessoaService from '../services/SearchPessoaService';
 import DeletePessoaService from '../services/DeletePessoaService';
+import UpdatePessoaService from '../services/UpdatePessoaService';
 
-
-
-export default class PessoaController{
-
-  public async create(request: Request, response: Response): Promise<Response>{
+export default class PessoaController {
+  public async create(request: Request, response: Response): Promise<Response> {
     const { nome, telefone, cpf } = request.body;
 
     const createPessoa = new CreatePessoaService();
@@ -18,11 +16,10 @@ export default class PessoaController{
       telefone,
     });
 
-
     return response.json(pessoa);
   }
 
-  public async index(request: Request, response: Response): Promise<Response>{
+  public async index(request: Request, response: Response): Promise<Response> {
     const { cpf } = request.params;
 
     const searchPessoa = new SearchPessoaService();
@@ -30,10 +27,9 @@ export default class PessoaController{
     const pessoa = await searchPessoa.execute({ cpf });
 
     return response.json(pessoa);
-
   }
 
-  public async delete(request: Request, response: Response): Promise<Response>{
+  public async delete(request: Request, response: Response): Promise<Response> {
     const { cpf } = request.params;
 
     const deletePessoa = new DeletePessoaService();
@@ -41,6 +37,20 @@ export default class PessoaController{
     await deletePessoa.execute({ cpf });
 
     return response.status(204).json();
+  }
 
+  public async update(request: Request, response: Response): Promise<Response> {
+    const { cpf } = request.params;
+    const { nome, telefone } = request.body;
+
+    const updatePessoa = new UpdatePessoaService();
+
+    const pessoa = await updatePessoa.execute({
+      cpf,
+      nome,
+      telefone,
+    });
+
+    return response.json(pessoa);
   }
 }

@@ -42,7 +42,7 @@ server.use(
   },
 );
 
-const PORTA = 3333;
+const PORTA = 3331;
 
 server.listen(PORTA, () => {
   console.log(`Servidor rodando na porta: ${PORTA}`);
