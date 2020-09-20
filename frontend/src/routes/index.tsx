@@ -6,7 +6,7 @@ import Main from '../Pages/Main';
 const router = () => (
   <Switch>
     <Route path="/" exact component={Main} />
-    <Route path="/pessoas" exact component={ListPessoas} />
+    <Route path="/pessoas" component={ListPessoas} />
   </Switch>
 );
 

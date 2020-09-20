@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState, useCallback } from 'react';
 import InputMask from 'react-input-mask';
 
@@ -32,12 +31,17 @@ const Main: React.FC = () => {
       }
 
       try {
-        const response = await api.post<Pessoa>('/pessoas', {
+        await api.post<Pessoa>('/pessoas', {
           nome,
           cpf,
           telefone,
         });
         setLoading(true);
+        alert('Cadastro realizado com sucesso!');
+
+        setCPF('');
+        setNome('');
+        setTelefone('');
       } catch (error) {
         alert('Erro Cpf já existente ou Invalido, tente novamente');
         setCPF('');
@@ -100,7 +104,7 @@ const Main: React.FC = () => {
         </MainCadastro>
 
         <QrCode>
-          <a href="https://github.com/carlos-reiss/leveTec">
+          <a href="https://github.com/carlos-reiss/leveTec" target="_blank">
             <img src={qrcode} alt="" />
           </a>
         </QrCode>

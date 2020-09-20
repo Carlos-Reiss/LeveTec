@@ -43,7 +43,11 @@
             }
         ],
         "no-use-before-define": "off",
-        "@typescript-eslint/no-use-before-define": ["error"]
+        "@typescript-eslint/no-use-before-define": ["error"],
+        "react/jsx-no-target-blank":"off",
+        "jsx-a11y/label-has-associated-control":"off",
+        "react/prop-types": "warn",
+        "no-param-reassign": "warn"
     },
     "settings": {
         "import/resolver": {
