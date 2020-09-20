@@ -37,7 +37,7 @@
 
 ## 👨🏻‍💻 Sobre o Projeto
 
-- <p >Projeto toltamente desenvolvido em typescript, o backend está finalizado todas as rotas foi desenvolvido utilizando NodeJS com Express e o frontend foi feito em ReactJS.</p>
+- <p >Projeto toltamente desenvolvido em typescript, o backend está finalizado todas as rotas, foi desenvolvido utilizando NodeJS com Express. já o frontend foi feito em ReactJS.</p>
 
 ## 🚀 Tecnologias utilizadas no Projeto
 
