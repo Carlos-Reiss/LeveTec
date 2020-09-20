@@ -32,11 +32,6 @@
   <a href="#-comecando-a-utilizar-o-projeto">Começando a usar o Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 </p>
 
-<p id="insomniaButton" align="center">
-  <a href="" target="_blank">
-    <img src="https://insomnia.rest/images/run.svg" alt="Run in Insomnia">
-  </a>
-</p>
 
 <img alt="Layout" src="frontend/src/assets/gif_aplicacao.gif">
 
@@ -95,7 +90,7 @@ $ cd backend
 $ yarn install ou npm install
 
 # após finalizar o download iniciar o servidor
-$ yarn dev:server ou npm dev:server
+$ yarn dev:server ou npm run-script dev:server
 
 # Iniciado servidor na porta 8080... caso falhe só mudar para outra porta importante também mudar no frontend
 ```
