@@ -46,8 +46,9 @@
         "@typescript-eslint/no-use-before-define": ["error"],
         "react/jsx-no-target-blank":"off",
         "jsx-a11y/label-has-associated-control":"off",
-        "react/prop-types": "warn",
-        "no-param-reassign": "warn"
+        "react/prop-types": "off",
+        "no-param-reassign": "off",
+        "array-callback-return":"off"
     },
     "settings": {
         "import/resolver": {
