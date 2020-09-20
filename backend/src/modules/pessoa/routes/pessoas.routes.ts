@@ -11,22 +11,14 @@ pessoasRouter.post(
   celebrate({
     [Segments.BODY]: Joi.object().keys({
       nome: Joi.string().required(),
-      telefone: Joi.string().required().max(11).min(9),
+      telefone: Joi.string().required().max(14).min(11),
       cpf: Joi.string().required(),
     }),
   }),
   pessoaController.create,
 );
 
-pessoasRouter.get(
-  '/:cpf',
-  celebrate({
-    [Segments.PARAMS]: Joi.object().keys({
-      cpf: Joi.string().required(),
-    }),
-  }),
-  pessoaController.index,
-);
+pessoasRouter.get('/', pessoaController.index);
 
 pessoasRouter.delete(
   '/:cpf',

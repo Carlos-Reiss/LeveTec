@@ -1,19 +1,10 @@
 import Pessoa from '../entities/Pessoa';
 import { IPessoa } from '../interfaces/IPessoa';
-import ValidateCpf from '../../../util/validaCPF';
 import AppError from '../../../error/AppError';
 
-type IRequest = {
-  cpf: string;
-};
-
 class SearchPessoaService {
-  public async execute({ cpf }: IRequest): Promise<IPessoa> {
-    if (ValidateCpf(cpf) === false) {
-      throw new AppError('CPF não é valido', 400);
-    }
-
-    const searchPessoa = await Pessoa.findOne({ cpf });
+  public async execute(): Promise<IPessoa[]> {
+    const searchPessoa = await Pessoa.find();
 
     if (!searchPessoa) {
       throw new AppError(
