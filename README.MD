@@ -72,6 +72,9 @@ Caso queira testar rotas do backend pode utilizar o `Insomnia` App dentro da pas
  - Link: mongodb+srv://carlos-reis:12345678carlos@cluster0.ntz2g.mongodb.net/test?authSource=admin&replicaSet=atlas-11hmbi-shard-0&readPreference=primary&appname=MongoDB%20Compass&ssl=true
 - Para utilizar esse link é necessário o [MongoDB Compass community](https://www.mongodb.com/try/download/compass) colar o link na aba conexões, (deixei aberto a acessos a todos os IP's) depois de conectar o banco é 'Projeto'.
 
+### Script do banco
+- O script do banco está na pasta backend 'ScriptMongoDB.js' como utilizei mongoDB através da interface Robo 3t, dei uma carga no banco, como é NoSQL eles tem uma maneira própria de escrever Scripts mas caso necessário deixei comentado como faria num SQL.
+
 **Clonando o Projeto e acessando as pastas**
 
 ```bash
