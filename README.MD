@@ -100,7 +100,7 @@ $ yarn dev:server ou npm dev:server
 # Iniciado servidor na porta 8080... caso falhe só mudar para outra porta importante também mudar no frontend
 ```
 
-### Web
+### Frontend
 
 _Obs.: Antes de continuar é bom visualizar se a API está mesmo rodando_
 
