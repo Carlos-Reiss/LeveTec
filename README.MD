@@ -3,13 +3,12 @@
   Projeto Leve Tecnologia
 </h1>
 
-<h3 align="center">
+<h5 align="center">
   Projeto desenvolvido do backend ao frontend, aplicação de cadastro de pessoas em cursos.
-</h3>
+</h5>
 
 <p align="center">
-  <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/EliasGcf/readme-template">
-
+  
   <a href="https://www.linkedin.com/in/carlos-reis-b62893185/">
     <img alt="Made by" src="https://img.shields.io/badge/made%20by-Carlos%20reis-gree">
   </a>
@@ -28,7 +27,7 @@
 
 <p align="center">
   <a href="#-sobre-o-projeto">Sobre o Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-tecnologias-utilizadas-no-projeto">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#-comecando-a-utilizar-o-projeto">Começando a usar o Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 </p>
 
